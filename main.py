@@ -1,5 +1,11 @@
-# main.py
-print("Welcome to the Personal Expense Manager!")
-expense = float(input("Enter expense amount: "))
-category = input("Enter category (e.g., Food, Travel): ")
-print(f"You spent {expense} on {category}.")
+expenses = []
+
+while True:
+    expense = float(input("Enter expense amount: "))
+    category = input("Enter category: ")
+    expenses.append({"amount": expense, "category": category})
+    more = input("Add another expense? (yes/no): ").lower()
+    if more != "yes":
+        break
+
+print("Expenses:", expenses)
